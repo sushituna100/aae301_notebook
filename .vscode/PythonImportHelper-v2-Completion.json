@@ -1,0 +1,37 @@
+[
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "FuncAnimation",
+        "importPath": "matplotlib.animation",
+        "description": "matplotlib.animation",
+        "isExtraImport": true,
+        "detail": "matplotlib.animation",
+        "documentation": {}
+    },
+    {
+        "label": "comet",
+        "kind": 2,
+        "importPath": "Examples.mycomet",
+        "description": "Examples.mycomet",
+        "peekOfCode": "def comet(x, y, *args, **kwargs):\n    tf = 3\n    fps=30\n    fig, ax = plt.subplots()\n    ln, = plt.plot([], [], 'r.-', alpha=0.5, *args, **kwargs)\n    dot, = plt.plot([], [], marker='o', markersize=10)\n    plt.xlabel('x')\n    plt.ylabel('y')\n    plt.grid()\n    def init():",
+        "detail": "Examples.mycomet",
+        "documentation": {}
+    }
+]
