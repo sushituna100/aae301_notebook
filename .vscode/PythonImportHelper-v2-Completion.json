@@ -1,0 +1,145 @@
+[
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "FuncAnimation",
+        "importPath": "matplotlib.animation",
+        "description": "matplotlib.animation",
+        "isExtraImport": true,
+        "detail": "matplotlib.animation",
+        "documentation": {}
+    },
+    {
+        "label": "comet",
+        "kind": 2,
+        "importPath": "Examples.mycomet",
+        "description": "Examples.mycomet",
+        "peekOfCode": "def comet(x, y, *args, **kwargs):\n    tf = 3\n    fps=30\n    fig, ax = plt.subplots()\n    ln, = plt.plot([], [], 'r.-', alpha=0.5, *args, **kwargs)\n    dot, = plt.plot([], [], marker='o', markersize=10)\n    plt.xlabel('x')\n    plt.ylabel('y')\n    plt.grid()\n    def init():",
+        "detail": "Examples.mycomet",
+        "documentation": {}
+    },
+    {
+        "label": "n",
+        "kind": 5,
+        "importPath": "HW.HW01_301",
+        "description": "HW.HW01_301",
+        "peekOfCode": "n = 50\n#Calc the n of unity\nk_values = np.arange(n)\nangles = 2 * np.pi * k_values / n\nroots = np.exp(1j * angles)\n#Create the figure\nplt.figure(figsize = (10,10))\nplt.plot(roots.real, roots.imag, 'o')\nplt.title('Roots of Unity of n=50')\nplt.xlabel('Real Part')",
+        "detail": "HW.HW01_301",
+        "documentation": {}
+    },
+    {
+        "label": "k_values",
+        "kind": 5,
+        "importPath": "HW.HW01_301",
+        "description": "HW.HW01_301",
+        "peekOfCode": "k_values = np.arange(n)\nangles = 2 * np.pi * k_values / n\nroots = np.exp(1j * angles)\n#Create the figure\nplt.figure(figsize = (10,10))\nplt.plot(roots.real, roots.imag, 'o')\nplt.title('Roots of Unity of n=50')\nplt.xlabel('Real Part')\nplt.ylabel('Imaginary Part')\nplt.axhline(0, color='black',linewidth=0.5, ls='--')",
+        "detail": "HW.HW01_301",
+        "documentation": {}
+    },
+    {
+        "label": "angles",
+        "kind": 5,
+        "importPath": "HW.HW01_301",
+        "description": "HW.HW01_301",
+        "peekOfCode": "angles = 2 * np.pi * k_values / n\nroots = np.exp(1j * angles)\n#Create the figure\nplt.figure(figsize = (10,10))\nplt.plot(roots.real, roots.imag, 'o')\nplt.title('Roots of Unity of n=50')\nplt.xlabel('Real Part')\nplt.ylabel('Imaginary Part')\nplt.axhline(0, color='black',linewidth=0.5, ls='--')\nplt.axvline(0, color='black',linewidth=0.5, ls='--')",
+        "detail": "HW.HW01_301",
+        "documentation": {}
+    },
+    {
+        "label": "roots",
+        "kind": 5,
+        "importPath": "HW.HW01_301",
+        "description": "HW.HW01_301",
+        "peekOfCode": "roots = np.exp(1j * angles)\n#Create the figure\nplt.figure(figsize = (10,10))\nplt.plot(roots.real, roots.imag, 'o')\nplt.title('Roots of Unity of n=50')\nplt.xlabel('Real Part')\nplt.ylabel('Imaginary Part')\nplt.axhline(0, color='black',linewidth=0.5, ls='--')\nplt.axvline(0, color='black',linewidth=0.5, ls='--')\nplt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)",
+        "detail": "HW.HW01_301",
+        "documentation": {}
+    },
+    {
+        "label": "plt.figure(figsize",
+        "kind": 5,
+        "importPath": "HW.HW01_301",
+        "description": "HW.HW01_301",
+        "peekOfCode": "plt.figure(figsize = (10,10))\nplt.plot(roots.real, roots.imag, 'o')\nplt.title('Roots of Unity of n=50')\nplt.xlabel('Real Part')\nplt.ylabel('Imaginary Part')\nplt.axhline(0, color='black',linewidth=0.5, ls='--')\nplt.axvline(0, color='black',linewidth=0.5, ls='--')\nplt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)\nplt.savefig('HW01_301_8.png')\nplt.show()",
+        "detail": "HW.HW01_301",
+        "documentation": {}
+    },
+    {
+        "label": "plt.grid(color",
+        "kind": 5,
+        "importPath": "HW.HW01_301",
+        "description": "HW.HW01_301",
+        "peekOfCode": "plt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)\nplt.savefig('HW01_301_8.png')\nplt.show()\n'''Problem 9.c'''\n#Use Numpy's linspace to create an \"linspace\" arry of 100 points similar to MATLAB\ntheta = np.linspace(0, 2 *np.pi, 100)\n#Create the complex numbers z_1 and z_2\n#J is represented as the imaginary number in Python\nz_1 = np.exp(3j * theta)\nz_2 = 1j * np.exp(-2j * theta)",
+        "detail": "HW.HW01_301",
+        "documentation": {}
+    },
+    {
+        "label": "theta",
+        "kind": 5,
+        "importPath": "HW.HW01_301",
+        "description": "HW.HW01_301",
+        "peekOfCode": "theta = np.linspace(0, 2 *np.pi, 100)\n#Create the complex numbers z_1 and z_2\n#J is represented as the imaginary number in Python\nz_1 = np.exp(3j * theta)\nz_2 = 1j * np.exp(-2j * theta)\n#Create the figure\nplt.figure(figsize = (12,6))\nplt.subplot(1,2,1)\nplt.plot(z_1.real, z_1.imag, label='z_1 = e^(3jθ)')\nplt.title('Parameteric Plots of z_1')",
+        "detail": "HW.HW01_301",
+        "documentation": {}
+    },
+    {
+        "label": "z_1",
+        "kind": 5,
+        "importPath": "HW.HW01_301",
+        "description": "HW.HW01_301",
+        "peekOfCode": "z_1 = np.exp(3j * theta)\nz_2 = 1j * np.exp(-2j * theta)\n#Create the figure\nplt.figure(figsize = (12,6))\nplt.subplot(1,2,1)\nplt.plot(z_1.real, z_1.imag, label='z_1 = e^(3jθ)')\nplt.title('Parameteric Plots of z_1')\nplt.xlabel('Real Part')\nplt.ylabel(\"Imaginary Part\")\nplt.axhline(0, color='black',linewidth=0.5, ls='--')",
+        "detail": "HW.HW01_301",
+        "documentation": {}
+    },
+    {
+        "label": "z_2",
+        "kind": 5,
+        "importPath": "HW.HW01_301",
+        "description": "HW.HW01_301",
+        "peekOfCode": "z_2 = 1j * np.exp(-2j * theta)\n#Create the figure\nplt.figure(figsize = (12,6))\nplt.subplot(1,2,1)\nplt.plot(z_1.real, z_1.imag, label='z_1 = e^(3jθ)')\nplt.title('Parameteric Plots of z_1')\nplt.xlabel('Real Part')\nplt.ylabel(\"Imaginary Part\")\nplt.axhline(0, color='black',linewidth=0.5, ls='--')\nplt.axvline(0, color='black',linewidth=0.5, ls='--')",
+        "detail": "HW.HW01_301",
+        "documentation": {}
+    },
+    {
+        "label": "plt.figure(figsize",
+        "kind": 5,
+        "importPath": "HW.HW01_301",
+        "description": "HW.HW01_301",
+        "peekOfCode": "plt.figure(figsize = (12,6))\nplt.subplot(1,2,1)\nplt.plot(z_1.real, z_1.imag, label='z_1 = e^(3jθ)')\nplt.title('Parameteric Plots of z_1')\nplt.xlabel('Real Part')\nplt.ylabel(\"Imaginary Part\")\nplt.axhline(0, color='black',linewidth=0.5, ls='--')\nplt.axvline(0, color='black',linewidth=0.5, ls='--')\nplt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)\nplt.legend()",
+        "detail": "HW.HW01_301",
+        "documentation": {}
+    },
+    {
+        "label": "plt.grid(color",
+        "kind": 5,
+        "importPath": "HW.HW01_301",
+        "description": "HW.HW01_301",
+        "peekOfCode": "plt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)\nplt.legend()\nplt.subplot(1,2,2)\nplt.plot(z_2.real, z_2.imag, label='z_1 = je^(-2jθ)')\nplt.title('Parameteric Plots of z_2')\nplt.xlabel('Real Part')\nplt.ylabel(\"Imaginary Part\")\nplt.axhline(0, color='black',linewidth=0.5, ls='--')\nplt.axvline(0, color='black',linewidth=0.5, ls='--')\nplt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)",
+        "detail": "HW.HW01_301",
+        "documentation": {}
+    },
+    {
+        "label": "plt.grid(color",
+        "kind": 5,
+        "importPath": "HW.HW01_301",
+        "description": "HW.HW01_301",
+        "peekOfCode": "plt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)\nplt.legend()\n#Save and show the plots\nplt.savefig('HW01_301_9c.png')\nplt.show()",
+        "detail": "HW.HW01_301",
+        "documentation": {}
+    }
+]
