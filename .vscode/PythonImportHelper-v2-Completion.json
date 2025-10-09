@@ -706,5 +706,41 @@
         "peekOfCode": "plt.legend(loc = 'best')\nplt.title('HW 4 Problem 4')\nplt.show()\n#Part C\nfor n in (2,10):\n    s = a0 * np.ones_like(t_int)  # Changed to use t_int instead of t_range\n    for k in range(1, n+1):\n        s += alpha[k-1] * np.cos(k * t_int) + beta[k-1] * np.sin(k * t_int)  # Using t_int for evaluation\n    g2 = (f_int - s)**2\n    plain = np.sqrt(np.trapz(g2, t_int))",
         "detail": "HW.HW04_301",
         "documentation": {}
+    },
+    {
+        "label": "n",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "n = [2,3, 6]\nomega_3 = 0\nfor N in n:\n    #Build the matrix where i and k represents the rows and column indices\n    i, k = np.meshgrid(np.arange(N), np.arange(N))\n    #Build the omega matrix\n    omega = np.exp(-2j * np.pi * i * k / N)\n    if N == 3:\n        omega_3 = omega\n    print(f\"--- (i) {N} x {N} DFT Matrix ---\")",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "omega_3",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "omega_3 = 0\nfor N in n:\n    #Build the matrix where i and k represents the rows and column indices\n    i, k = np.meshgrid(np.arange(N), np.arange(N))\n    #Build the omega matrix\n    omega = np.exp(-2j * np.pi * i * k / N)\n    if N == 3:\n        omega_3 = omega\n    print(f\"--- (i) {N} x {N} DFT Matrix ---\")\n    print(np.round(omega, 4))",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "data = np.array([1, 4, 4])\n# Using the numpy IDFT function (np.fft.ifft)\nstandard_idft_result = np.fft.ifft(data)\nprint(\"--- (ii) IDFT for X = [1, 4, 4] ---\")\nprint(\"IDFT Result (Standard numpy.fft.ifft):\\n\", np.round(standard_idft_result, 4))\nprint(\"-\" * 30)",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "standard_idft_result",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "standard_idft_result = np.fft.ifft(data)\nprint(\"--- (ii) IDFT for X = [1, 4, 4] ---\")\nprint(\"IDFT Result (Standard numpy.fft.ifft):\\n\", np.round(standard_idft_result, 4))\nprint(\"-\" * 30)",
+        "detail": "HW.HW05_301",
+        "documentation": {}
     }
 ]
