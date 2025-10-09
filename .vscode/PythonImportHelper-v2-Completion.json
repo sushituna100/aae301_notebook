@@ -708,11 +708,29 @@
         "documentation": {}
     },
     {
+        "label": "f_t",
+        "kind": 2,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "def f_t(t):\n    \"\"\"The function f(t) = sin(30t) * exp(2 * cos(5t)).\"\"\"\n    return np.sin(30 * t) * np.exp(2 * np.cos(5 * t))\n# Sample points t_j = 2*pi*j / nu\nj = np.arange(N)\nt = j * dt\nf_sampled = f_t(t)\n#Get the fourier coefficeints\nfft_coeff = np.fft.fft(f_sampled)\n#Get the ordered coefficients from (0 to N-1)",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "reconstruct_approximations",
+        "kind": 2,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "def reconstruct_approximations(t, coeffs, frequencies):\n    p_t = np.zeros_like(t, dtype = np.complex128)\n    for c, k in zip(coeffs, frequencies):\n        p_t += c * np.exp(-1j * k * t)\n    return np.real(p_t)\np_S_t = reconstruct_approximations(t, S_coeffs, S_k)\np_K_t = reconstruct_approximations(t, K_coeffs, K_k)\nplot_start = 0\nplot_end = 2 * np.pi\nidx_start = np.argmin(np.abs(t - plot_start))",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
         "label": "n",
         "kind": 5,
         "importPath": "HW.HW05_301",
         "description": "HW.HW05_301",
-        "peekOfCode": "n = [2,3, 6]\nomega_3 = 0\nfor N in n:\n    #Build the matrix where i and k represents the rows and column indices\n    i, k = np.meshgrid(np.arange(N), np.arange(N))\n    #Build the omega matrix\n    omega = np.exp(-2j * np.pi * i * k / N)\n    if N == 3:\n        omega_3 = omega\n    print(f\"--- (i) {N} x {N} DFT Matrix ---\")",
+        "peekOfCode": "n = [2,3, 6]\n#Intiialize the omega matrix for 3x3\nomega_3 = 0\n#Loop structure to print out the omega matrices\nfor N in n:\n    #Build the matrix where i and k represents the rows and column indices\n    i, k = np.meshgrid(np.arange(N), np.arange(N))\n    #Build the omega matrix\n    omega = np.exp(-2j * np.pi * i * k / N)\n    if N == 3:",
         "detail": "HW.HW05_301",
         "documentation": {}
     },
@@ -721,7 +739,7 @@
         "kind": 5,
         "importPath": "HW.HW05_301",
         "description": "HW.HW05_301",
-        "peekOfCode": "omega_3 = 0\nfor N in n:\n    #Build the matrix where i and k represents the rows and column indices\n    i, k = np.meshgrid(np.arange(N), np.arange(N))\n    #Build the omega matrix\n    omega = np.exp(-2j * np.pi * i * k / N)\n    if N == 3:\n        omega_3 = omega\n    print(f\"--- (i) {N} x {N} DFT Matrix ---\")\n    print(np.round(omega, 4))",
+        "peekOfCode": "omega_3 = 0\n#Loop structure to print out the omega matrices\nfor N in n:\n    #Build the matrix where i and k represents the rows and column indices\n    i, k = np.meshgrid(np.arange(N), np.arange(N))\n    #Build the omega matrix\n    omega = np.exp(-2j * np.pi * i * k / N)\n    if N == 3:\n        omega_3 = omega\n    print(f\"--- (i) {N} x {N} DFT Matrix ---\")",
         "detail": "HW.HW05_301",
         "documentation": {}
     },
@@ -730,7 +748,7 @@
         "kind": 5,
         "importPath": "HW.HW05_301",
         "description": "HW.HW05_301",
-        "peekOfCode": "data = np.array([1, 4, 4])\n# Using the numpy IDFT function (np.fft.ifft)\nstandard_idft_result = np.fft.ifft(data)\nprint(\"--- (ii) IDFT for X = [1, 4, 4] ---\")\nprint(\"IDFT Result (Standard numpy.fft.ifft):\\n\", np.round(standard_idft_result, 4))\nprint(\"-\" * 30)",
+        "peekOfCode": "data = np.array([1, 4, 4])\n# Using the numpy IDFT function (np.fft.ifft)\nstandard_idft_result = np.fft.ifft(data)\n#Print out the results\nprint(\"--- (ii) IDFT for X = [1, 4, 4] ---\")\nprint(\"IDFT Result (Standard numpy.fft.ifft):\\n\", np.round(standard_idft_result, 4))\nprint(\"-\" * 30)\n'''\nQuestion 2\n'''",
         "detail": "HW.HW05_301",
         "documentation": {}
     },
@@ -739,7 +757,421 @@
         "kind": 5,
         "importPath": "HW.HW05_301",
         "description": "HW.HW05_301",
-        "peekOfCode": "standard_idft_result = np.fft.ifft(data)\nprint(\"--- (ii) IDFT for X = [1, 4, 4] ---\")\nprint(\"IDFT Result (Standard numpy.fft.ifft):\\n\", np.round(standard_idft_result, 4))\nprint(\"-\" * 30)",
+        "peekOfCode": "standard_idft_result = np.fft.ifft(data)\n#Print out the results\nprint(\"--- (ii) IDFT for X = [1, 4, 4] ---\")\nprint(\"IDFT Result (Standard numpy.fft.ifft):\\n\", np.round(standard_idft_result, 4))\nprint(\"-\" * 30)\n'''\nQuestion 2\n'''\nimport matplotlib.pyplot as plt\nnu = 2**19  # Number of samples (nu = N)",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "nu",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "nu = 2**19  # Number of samples (nu = N)\nN = nu\nL = 2 * np.pi  # Domain length\nfs = N / L  # Sampling frequency\ndt = L / N  # Sample time step\n# Define the function\ndef f_t(t):\n    \"\"\"The function f(t) = sin(30t) * exp(2 * cos(5t)).\"\"\"\n    return np.sin(30 * t) * np.exp(2 * np.cos(5 * t))\n# Sample points t_j = 2*pi*j / nu",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "N",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "N = nu\nL = 2 * np.pi  # Domain length\nfs = N / L  # Sampling frequency\ndt = L / N  # Sample time step\n# Define the function\ndef f_t(t):\n    \"\"\"The function f(t) = sin(30t) * exp(2 * cos(5t)).\"\"\"\n    return np.sin(30 * t) * np.exp(2 * np.cos(5 * t))\n# Sample points t_j = 2*pi*j / nu\nj = np.arange(N)",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "L",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "L = 2 * np.pi  # Domain length\nfs = N / L  # Sampling frequency\ndt = L / N  # Sample time step\n# Define the function\ndef f_t(t):\n    \"\"\"The function f(t) = sin(30t) * exp(2 * cos(5t)).\"\"\"\n    return np.sin(30 * t) * np.exp(2 * np.cos(5 * t))\n# Sample points t_j = 2*pi*j / nu\nj = np.arange(N)\nt = j * dt",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "fs",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "fs = N / L  # Sampling frequency\ndt = L / N  # Sample time step\n# Define the function\ndef f_t(t):\n    \"\"\"The function f(t) = sin(30t) * exp(2 * cos(5t)).\"\"\"\n    return np.sin(30 * t) * np.exp(2 * np.cos(5 * t))\n# Sample points t_j = 2*pi*j / nu\nj = np.arange(N)\nt = j * dt\nf_sampled = f_t(t)",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "dt",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "dt = L / N  # Sample time step\n# Define the function\ndef f_t(t):\n    \"\"\"The function f(t) = sin(30t) * exp(2 * cos(5t)).\"\"\"\n    return np.sin(30 * t) * np.exp(2 * np.cos(5 * t))\n# Sample points t_j = 2*pi*j / nu\nj = np.arange(N)\nt = j * dt\nf_sampled = f_t(t)\n#Get the fourier coefficeints",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "j",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "j = np.arange(N)\nt = j * dt\nf_sampled = f_t(t)\n#Get the fourier coefficeints\nfft_coeff = np.fft.fft(f_sampled)\n#Get the ordered coefficients from (0 to N-1)\nc_k_fft_ordered = fft_coeff / N\n#Shift the coefficients back\nc_k = np.fft.fftshift(c_k_fft_ordered)\n#Frequencies range from -N/2 to N/2 - 1",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "t",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "t = j * dt\nf_sampled = f_t(t)\n#Get the fourier coefficeints\nfft_coeff = np.fft.fft(f_sampled)\n#Get the ordered coefficients from (0 to N-1)\nc_k_fft_ordered = fft_coeff / N\n#Shift the coefficients back\nc_k = np.fft.fftshift(c_k_fft_ordered)\n#Frequencies range from -N/2 to N/2 - 1\nk_all = np.fft.fftshift(np.fft.fftfreq(N, d=dt/(2*np.pi)))",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "f_sampled",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "f_sampled = f_t(t)\n#Get the fourier coefficeints\nfft_coeff = np.fft.fft(f_sampled)\n#Get the ordered coefficients from (0 to N-1)\nc_k_fft_ordered = fft_coeff / N\n#Shift the coefficients back\nc_k = np.fft.fftshift(c_k_fft_ordered)\n#Frequencies range from -N/2 to N/2 - 1\nk_all = np.fft.fftshift(np.fft.fftfreq(N, d=dt/(2*np.pi)))\n#Plot the double-sided power spectrum",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "fft_coeff",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "fft_coeff = np.fft.fft(f_sampled)\n#Get the ordered coefficients from (0 to N-1)\nc_k_fft_ordered = fft_coeff / N\n#Shift the coefficients back\nc_k = np.fft.fftshift(c_k_fft_ordered)\n#Frequencies range from -N/2 to N/2 - 1\nk_all = np.fft.fftshift(np.fft.fftfreq(N, d=dt/(2*np.pi)))\n#Plot the double-sided power spectrum\nk_range = np.arange(-100, 101)\nindices = k_range + N//2",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "c_k_fft_ordered",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "c_k_fft_ordered = fft_coeff / N\n#Shift the coefficients back\nc_k = np.fft.fftshift(c_k_fft_ordered)\n#Frequencies range from -N/2 to N/2 - 1\nk_all = np.fft.fftshift(np.fft.fftfreq(N, d=dt/(2*np.pi)))\n#Plot the double-sided power spectrum\nk_range = np.arange(-100, 101)\nindices = k_range + N//2\nc_k_array = c_k[indices]\n#Calc the power spectrum",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "c_k",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "c_k = np.fft.fftshift(c_k_fft_ordered)\n#Frequencies range from -N/2 to N/2 - 1\nk_all = np.fft.fftshift(np.fft.fftfreq(N, d=dt/(2*np.pi)))\n#Plot the double-sided power spectrum\nk_range = np.arange(-100, 101)\nindices = k_range + N//2\nc_k_array = c_k[indices]\n#Calc the power spectrum\npower_spectrum = np.abs(c_k_array)**2\nplt.figure(figsize = (10,10))",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "k_all",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "k_all = np.fft.fftshift(np.fft.fftfreq(N, d=dt/(2*np.pi)))\n#Plot the double-sided power spectrum\nk_range = np.arange(-100, 101)\nindices = k_range + N//2\nc_k_array = c_k[indices]\n#Calc the power spectrum\npower_spectrum = np.abs(c_k_array)**2\nplt.figure(figsize = (10,10))\nplt.stem(k_range, power_spectrum)\nplt.xlabel('Frequency index (k)')",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "k_range",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "k_range = np.arange(-100, 101)\nindices = k_range + N//2\nc_k_array = c_k[indices]\n#Calc the power spectrum\npower_spectrum = np.abs(c_k_array)**2\nplt.figure(figsize = (10,10))\nplt.stem(k_range, power_spectrum)\nplt.xlabel('Frequency index (k)')\nplt.ylabel(\"Power (|c_k|^2)\")\nplt.title(r'Two-Sided Power Spectrum $|\\mathbf{c}_k|^2$ for $k \\in [-100, 100]$')",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "indices",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "indices = k_range + N//2\nc_k_array = c_k[indices]\n#Calc the power spectrum\npower_spectrum = np.abs(c_k_array)**2\nplt.figure(figsize = (10,10))\nplt.stem(k_range, power_spectrum)\nplt.xlabel('Frequency index (k)')\nplt.ylabel(\"Power (|c_k|^2)\")\nplt.title(r'Two-Sided Power Spectrum $|\\mathbf{c}_k|^2$ for $k \\in [-100, 100]$')\nplt.grid(True)",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "c_k_array",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "c_k_array = c_k[indices]\n#Calc the power spectrum\npower_spectrum = np.abs(c_k_array)**2\nplt.figure(figsize = (10,10))\nplt.stem(k_range, power_spectrum)\nplt.xlabel('Frequency index (k)')\nplt.ylabel(\"Power (|c_k|^2)\")\nplt.title(r'Two-Sided Power Spectrum $|\\mathbf{c}_k|^2$ for $k \\in [-100, 100]$')\nplt.grid(True)\nplt.show()",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "power_spectrum",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "power_spectrum = np.abs(c_k_array)**2\nplt.figure(figsize = (10,10))\nplt.stem(k_range, power_spectrum)\nplt.xlabel('Frequency index (k)')\nplt.ylabel(\"Power (|c_k|^2)\")\nplt.title(r'Two-Sided Power Spectrum $|\\mathbf{c}_k|^2$ for $k \\in [-100, 100]$')\nplt.grid(True)\nplt.show()\n#Get the single-sided power spectrum\npower_spectrum_single = power_spectrum[0:101]",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "plt.figure(figsize",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "plt.figure(figsize = (10,10))\nplt.stem(k_range, power_spectrum)\nplt.xlabel('Frequency index (k)')\nplt.ylabel(\"Power (|c_k|^2)\")\nplt.title(r'Two-Sided Power Spectrum $|\\mathbf{c}_k|^2$ for $k \\in [-100, 100]$')\nplt.grid(True)\nplt.show()\n#Get the single-sided power spectrum\npower_spectrum_single = power_spectrum[0:101]\nk_range_single = k_range[0:101]",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "power_spectrum_single",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "power_spectrum_single = power_spectrum[0:101]\nk_range_single = k_range[0:101]\nplt.figure(figsize = (10,10))\nplt.stem(k_range_single, power_spectrum_single)\nplt.xlabel('Frequency index (k)')\nplt.ylabel(\"Power (|c_k|^2)\")\nplt.title(r'Single-Sided Power Spectrum $|\\mathbf{c}_k|^2$ for $k \\in [0, 100]$')\nplt.grid(True)\nplt.show()\nthreshold = 0.000001",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "k_range_single",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "k_range_single = k_range[0:101]\nplt.figure(figsize = (10,10))\nplt.stem(k_range_single, power_spectrum_single)\nplt.xlabel('Frequency index (k)')\nplt.ylabel(\"Power (|c_k|^2)\")\nplt.title(r'Single-Sided Power Spectrum $|\\mathbf{c}_k|^2$ for $k \\in [0, 100]$')\nplt.grid(True)\nplt.show()\nthreshold = 0.000001\nmask = np.abs(c_k) > threshold",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "plt.figure(figsize",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "plt.figure(figsize = (10,10))\nplt.stem(k_range_single, power_spectrum_single)\nplt.xlabel('Frequency index (k)')\nplt.ylabel(\"Power (|c_k|^2)\")\nplt.title(r'Single-Sided Power Spectrum $|\\mathbf{c}_k|^2$ for $k \\in [0, 100]$')\nplt.grid(True)\nplt.show()\nthreshold = 0.000001\nmask = np.abs(c_k) > threshold\nk_nz = k_all[mask]",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "threshold",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "threshold = 0.000001\nmask = np.abs(c_k) > threshold\nk_nz = k_all[mask]\nc_k_nz = c_k[mask]\n#Sort by magnitude\nsorted_indices = np.argsort(np.abs(c_k_nz))\nk_sorted = k_nz[sorted_indices]\nc_k_sorted = c_k_nz[sorted_indices]\nk_inf_guess = sorted(list(set(np.abs(c_k_sorted[np.abs(c_k_sorted)**2 > threshold]))))\nprint(\"\\n\" + \"=\"*50)",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "mask",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "mask = np.abs(c_k) > threshold\nk_nz = k_all[mask]\nc_k_nz = c_k[mask]\n#Sort by magnitude\nsorted_indices = np.argsort(np.abs(c_k_nz))\nk_sorted = k_nz[sorted_indices]\nc_k_sorted = c_k_nz[sorted_indices]\nk_inf_guess = sorted(list(set(np.abs(c_k_sorted[np.abs(c_k_sorted)**2 > threshold]))))\nprint(\"\\n\" + \"=\"*50)\nprint(f\"a) Estimated K_inf Frequencies (Absolute values of k with |c_k|^2 > 1e-10):\\n{k_inf_guess}\")",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "k_nz",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "k_nz = k_all[mask]\nc_k_nz = c_k[mask]\n#Sort by magnitude\nsorted_indices = np.argsort(np.abs(c_k_nz))\nk_sorted = k_nz[sorted_indices]\nc_k_sorted = c_k_nz[sorted_indices]\nk_inf_guess = sorted(list(set(np.abs(c_k_sorted[np.abs(c_k_sorted)**2 > threshold]))))\nprint(\"\\n\" + \"=\"*50)\nprint(f\"a) Estimated K_inf Frequencies (Absolute values of k with |c_k|^2 > 1e-10):\\n{k_inf_guess}\")\nprint(\"Theoretical K_inf = {k | k = ±30 + 5m, m ∈ Z}\")",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "c_k_nz",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "c_k_nz = c_k[mask]\n#Sort by magnitude\nsorted_indices = np.argsort(np.abs(c_k_nz))\nk_sorted = k_nz[sorted_indices]\nc_k_sorted = c_k_nz[sorted_indices]\nk_inf_guess = sorted(list(set(np.abs(c_k_sorted[np.abs(c_k_sorted)**2 > threshold]))))\nprint(\"\\n\" + \"=\"*50)\nprint(f\"a) Estimated K_inf Frequencies (Absolute values of k with |c_k|^2 > 1e-10):\\n{k_inf_guess}\")\nprint(\"Theoretical K_inf = {k | k = ±30 + 5m, m ∈ Z}\")\nprint(\"=\"*50 + \"\\n\")",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "sorted_indices",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "sorted_indices = np.argsort(np.abs(c_k_nz))\nk_sorted = k_nz[sorted_indices]\nc_k_sorted = c_k_nz[sorted_indices]\nk_inf_guess = sorted(list(set(np.abs(c_k_sorted[np.abs(c_k_sorted)**2 > threshold]))))\nprint(\"\\n\" + \"=\"*50)\nprint(f\"a) Estimated K_inf Frequencies (Absolute values of k with |c_k|^2 > 1e-10):\\n{k_inf_guess}\")\nprint(\"Theoretical K_inf = {k | k = ±30 + 5m, m ∈ Z}\")\nprint(\"=\"*50 + \"\\n\")\n'''Question 2 Part B and C and D'''\nS_coeffs = c_k_sorted[:12]",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "k_sorted",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "k_sorted = k_nz[sorted_indices]\nc_k_sorted = c_k_nz[sorted_indices]\nk_inf_guess = sorted(list(set(np.abs(c_k_sorted[np.abs(c_k_sorted)**2 > threshold]))))\nprint(\"\\n\" + \"=\"*50)\nprint(f\"a) Estimated K_inf Frequencies (Absolute values of k with |c_k|^2 > 1e-10):\\n{k_inf_guess}\")\nprint(\"Theoretical K_inf = {k | k = ±30 + 5m, m ∈ Z}\")\nprint(\"=\"*50 + \"\\n\")\n'''Question 2 Part B and C and D'''\nS_coeffs = c_k_sorted[:12]\nS_k = k_sorted[:12]",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "c_k_sorted",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "c_k_sorted = c_k_nz[sorted_indices]\nk_inf_guess = sorted(list(set(np.abs(c_k_sorted[np.abs(c_k_sorted)**2 > threshold]))))\nprint(\"\\n\" + \"=\"*50)\nprint(f\"a) Estimated K_inf Frequencies (Absolute values of k with |c_k|^2 > 1e-10):\\n{k_inf_guess}\")\nprint(\"Theoretical K_inf = {k | k = ±30 + 5m, m ∈ Z}\")\nprint(\"=\"*50 + \"\\n\")\n'''Question 2 Part B and C and D'''\nS_coeffs = c_k_sorted[:12]\nS_k = k_sorted[:12]\nK_coeffs = c_k_sorted[:28]",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "k_inf_guess",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "k_inf_guess = sorted(list(set(np.abs(c_k_sorted[np.abs(c_k_sorted)**2 > threshold]))))\nprint(\"\\n\" + \"=\"*50)\nprint(f\"a) Estimated K_inf Frequencies (Absolute values of k with |c_k|^2 > 1e-10):\\n{k_inf_guess}\")\nprint(\"Theoretical K_inf = {k | k = ±30 + 5m, m ∈ Z}\")\nprint(\"=\"*50 + \"\\n\")\n'''Question 2 Part B and C and D'''\nS_coeffs = c_k_sorted[:12]\nS_k = k_sorted[:12]\nK_coeffs = c_k_sorted[:28]\nK_k = k_sorted[:28]",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "S_coeffs",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "S_coeffs = c_k_sorted[:12]\nS_k = k_sorted[:12]\nK_coeffs = c_k_sorted[:28]\nK_k = k_sorted[:28]\ndef reconstruct_approximations(t, coeffs, frequencies):\n    p_t = np.zeros_like(t, dtype = np.complex128)\n    for c, k in zip(coeffs, frequencies):\n        p_t += c * np.exp(-1j * k * t)\n    return np.real(p_t)\np_S_t = reconstruct_approximations(t, S_coeffs, S_k)",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "S_k",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "S_k = k_sorted[:12]\nK_coeffs = c_k_sorted[:28]\nK_k = k_sorted[:28]\ndef reconstruct_approximations(t, coeffs, frequencies):\n    p_t = np.zeros_like(t, dtype = np.complex128)\n    for c, k in zip(coeffs, frequencies):\n        p_t += c * np.exp(-1j * k * t)\n    return np.real(p_t)\np_S_t = reconstruct_approximations(t, S_coeffs, S_k)\np_K_t = reconstruct_approximations(t, K_coeffs, K_k)",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "K_coeffs",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "K_coeffs = c_k_sorted[:28]\nK_k = k_sorted[:28]\ndef reconstruct_approximations(t, coeffs, frequencies):\n    p_t = np.zeros_like(t, dtype = np.complex128)\n    for c, k in zip(coeffs, frequencies):\n        p_t += c * np.exp(-1j * k * t)\n    return np.real(p_t)\np_S_t = reconstruct_approximations(t, S_coeffs, S_k)\np_K_t = reconstruct_approximations(t, K_coeffs, K_k)\nplot_start = 0",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "K_k",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "K_k = k_sorted[:28]\ndef reconstruct_approximations(t, coeffs, frequencies):\n    p_t = np.zeros_like(t, dtype = np.complex128)\n    for c, k in zip(coeffs, frequencies):\n        p_t += c * np.exp(-1j * k * t)\n    return np.real(p_t)\np_S_t = reconstruct_approximations(t, S_coeffs, S_k)\np_K_t = reconstruct_approximations(t, K_coeffs, K_k)\nplot_start = 0\nplot_end = 2 * np.pi",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "p_S_t",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "p_S_t = reconstruct_approximations(t, S_coeffs, S_k)\np_K_t = reconstruct_approximations(t, K_coeffs, K_k)\nplot_start = 0\nplot_end = 2 * np.pi\nidx_start = np.argmin(np.abs(t - plot_start))\nidx_end = np.argmin(np.abs(t - plot_end))\nprint(\"\\n\" + \"=\"*50)\nprint(\"b & c & d) Approximations of f(t) using equations S and K:\\n\")\nplt.figure(figsize = (10,10))\nplt.plot(t[idx_start:idx_end], f_sampled[idx_start:idx_end], label = \"f(t)\")",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "p_K_t",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "p_K_t = reconstruct_approximations(t, K_coeffs, K_k)\nplot_start = 0\nplot_end = 2 * np.pi\nidx_start = np.argmin(np.abs(t - plot_start))\nidx_end = np.argmin(np.abs(t - plot_end))\nprint(\"\\n\" + \"=\"*50)\nprint(\"b & c & d) Approximations of f(t) using equations S and K:\\n\")\nplt.figure(figsize = (10,10))\nplt.plot(t[idx_start:idx_end], f_sampled[idx_start:idx_end], label = \"f(t)\")\nplt.plot(t[idx_start:idx_end], p_S_t[idx_start:idx_end], label = \"S\")",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "plot_start",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "plot_start = 0\nplot_end = 2 * np.pi\nidx_start = np.argmin(np.abs(t - plot_start))\nidx_end = np.argmin(np.abs(t - plot_end))\nprint(\"\\n\" + \"=\"*50)\nprint(\"b & c & d) Approximations of f(t) using equations S and K:\\n\")\nplt.figure(figsize = (10,10))\nplt.plot(t[idx_start:idx_end], f_sampled[idx_start:idx_end], label = \"f(t)\")\nplt.plot(t[idx_start:idx_end], p_S_t[idx_start:idx_end], label = \"S\")\nplt.plot(t[idx_start:idx_end], p_K_t[idx_start:idx_end], label = \"K\")",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "plot_end",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "plot_end = 2 * np.pi\nidx_start = np.argmin(np.abs(t - plot_start))\nidx_end = np.argmin(np.abs(t - plot_end))\nprint(\"\\n\" + \"=\"*50)\nprint(\"b & c & d) Approximations of f(t) using equations S and K:\\n\")\nplt.figure(figsize = (10,10))\nplt.plot(t[idx_start:idx_end], f_sampled[idx_start:idx_end], label = \"f(t)\")\nplt.plot(t[idx_start:idx_end], p_S_t[idx_start:idx_end], label = \"S\")\nplt.plot(t[idx_start:idx_end], p_K_t[idx_start:idx_end], label = \"K\")\nplt.title(\"Approximations of f(t) using equations S and K\")",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "idx_start",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "idx_start = np.argmin(np.abs(t - plot_start))\nidx_end = np.argmin(np.abs(t - plot_end))\nprint(\"\\n\" + \"=\"*50)\nprint(\"b & c & d) Approximations of f(t) using equations S and K:\\n\")\nplt.figure(figsize = (10,10))\nplt.plot(t[idx_start:idx_end], f_sampled[idx_start:idx_end], label = \"f(t)\")\nplt.plot(t[idx_start:idx_end], p_S_t[idx_start:idx_end], label = \"S\")\nplt.plot(t[idx_start:idx_end], p_K_t[idx_start:idx_end], label = \"K\")\nplt.title(\"Approximations of f(t) using equations S and K\")\nplt.legend(loc = 'best')",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "idx_end",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "idx_end = np.argmin(np.abs(t - plot_end))\nprint(\"\\n\" + \"=\"*50)\nprint(\"b & c & d) Approximations of f(t) using equations S and K:\\n\")\nplt.figure(figsize = (10,10))\nplt.plot(t[idx_start:idx_end], f_sampled[idx_start:idx_end], label = \"f(t)\")\nplt.plot(t[idx_start:idx_end], p_S_t[idx_start:idx_end], label = \"S\")\nplt.plot(t[idx_start:idx_end], p_K_t[idx_start:idx_end], label = \"K\")\nplt.title(\"Approximations of f(t) using equations S and K\")\nplt.legend(loc = 'best')\nplt.xlabel(\"t\")",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "plt.figure(figsize",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "plt.figure(figsize = (10,10))\nplt.plot(t[idx_start:idx_end], f_sampled[idx_start:idx_end], label = \"f(t)\")\nplt.plot(t[idx_start:idx_end], p_S_t[idx_start:idx_end], label = \"S\")\nplt.plot(t[idx_start:idx_end], p_K_t[idx_start:idx_end], label = \"K\")\nplt.title(\"Approximations of f(t) using equations S and K\")\nplt.legend(loc = 'best')\nplt.xlabel(\"t\")\nplt.ylabel(\"f(t)\")\nplt.grid(True)\nplt.show()",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "plt.legend(loc",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "plt.legend(loc = 'best')\nplt.xlabel(\"t\")\nplt.ylabel(\"f(t)\")\nplt.grid(True)\nplt.show()\nprint(\"=\"*50 + \"\\n\")\n'''Question 2 Part E'''\n#Create the norm of the fourier function\nnorm_f = np.sqrt(dt * np.sum(np.abs(f_sampled)**2))\n#Calculate the error and norm of the function with S",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "norm_f",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "norm_f = np.sqrt(dt * np.sum(np.abs(f_sampled)**2))\n#Calculate the error and norm of the function with S\nerror_S = f_sampled - p_S_t\nnorm_error_S = np.sqrt(dt * np.sum(np.abs(error_S)**2))\n#Calculate the error and norm of the function with K\nerror_K = f_sampled - p_K_t\nnorm_error_K = np.sqrt(dt * np.sum(np.abs(error_K)**2))\nprint(\"\\n\" + \"=\"*50)\nprint(\"e) Norm Computations (Approximation of L2 Norm):\")\nprint(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "error_S",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "error_S = f_sampled - p_S_t\nnorm_error_S = np.sqrt(dt * np.sum(np.abs(error_S)**2))\n#Calculate the error and norm of the function with K\nerror_K = f_sampled - p_K_t\nnorm_error_K = np.sqrt(dt * np.sum(np.abs(error_K)**2))\nprint(\"\\n\" + \"=\"*50)\nprint(\"e) Norm Computations (Approximation of L2 Norm):\")\nprint(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "norm_error_S",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "norm_error_S = np.sqrt(dt * np.sum(np.abs(error_S)**2))\n#Calculate the error and norm of the function with K\nerror_K = f_sampled - p_K_t\nnorm_error_K = np.sqrt(dt * np.sum(np.abs(error_K)**2))\nprint(\"\\n\" + \"=\"*50)\nprint(\"e) Norm Computations (Approximation of L2 Norm):\")\nprint(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "error_K",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "error_K = f_sampled - p_K_t\nnorm_error_K = np.sqrt(dt * np.sum(np.abs(error_K)**2))\nprint(\"\\n\" + \"=\"*50)\nprint(\"e) Norm Computations (Approximation of L2 Norm):\")\nprint(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "norm_error_K",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "norm_error_K = np.sqrt(dt * np.sum(np.abs(error_K)**2))\nprint(\"\\n\" + \"=\"*50)\nprint(\"e) Norm Computations (Approximation of L2 Norm):\")\nprint(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)",
+        "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "print(f\"||f||",
+        "kind": 5,
+        "importPath": "HW.HW05_301",
+        "description": "HW.HW05_301",
+        "peekOfCode": "print(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)",
         "detail": "HW.HW05_301",
         "documentation": {}
     }
