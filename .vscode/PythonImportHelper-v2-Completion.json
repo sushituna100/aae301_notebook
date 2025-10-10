@@ -1144,7 +1144,7 @@
         "kind": 5,
         "importPath": "HW.HW05_301",
         "description": "HW.HW05_301",
-        "peekOfCode": "norm_error_S = np.sqrt(dt * np.sum(np.abs(error_S)**2))\n#Calculate the error and norm of the function with K\nerror_K = f_sampled - p_K_t\nnorm_error_K = np.sqrt(dt * np.sum(np.abs(error_K)**2))\nprint(\"\\n\" + \"=\"*50)\nprint(\"e) Norm Computations (Approximation of L2 Norm):\")\nprint(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)",
+        "peekOfCode": "norm_error_S = np.sqrt(dt * np.sum(np.abs(error_S)**2))\n#Calculate the error and norm of the function with K\nerror_K = f_sampled - p_K_t\nnorm_error_K = np.sqrt(dt * np.sum(np.abs(error_K)**2))\nprint(\"\\n\" + \"=\"*50)\nprint(\"e) Norm Computations (Approximation of L2 Norm):\")\nprint(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)=",
         "detail": "HW.HW05_301",
         "documentation": {}
     },
@@ -1153,7 +1153,7 @@
         "kind": 5,
         "importPath": "HW.HW05_301",
         "description": "HW.HW05_301",
-        "peekOfCode": "error_K = f_sampled - p_K_t\nnorm_error_K = np.sqrt(dt * np.sum(np.abs(error_K)**2))\nprint(\"\\n\" + \"=\"*50)\nprint(\"e) Norm Computations (Approximation of L2 Norm):\")\nprint(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)",
+        "peekOfCode": "error_K = f_sampled - p_K_t\nnorm_error_K = np.sqrt(dt * np.sum(np.abs(error_K)**2))\nprint(\"\\n\" + \"=\"*50)\nprint(\"e) Norm Computations (Approximation of L2 Norm):\")\nprint(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)=",
         "detail": "HW.HW05_301",
         "documentation": {}
     },
@@ -1162,7 +1162,7 @@
         "kind": 5,
         "importPath": "HW.HW05_301",
         "description": "HW.HW05_301",
-        "peekOfCode": "norm_error_K = np.sqrt(dt * np.sum(np.abs(error_K)**2))\nprint(\"\\n\" + \"=\"*50)\nprint(\"e) Norm Computations (Approximation of L2 Norm):\")\nprint(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)",
+        "peekOfCode": "norm_error_K = np.sqrt(dt * np.sum(np.abs(error_K)**2))\nprint(\"\\n\" + \"=\"*50)\nprint(\"e) Norm Computations (Approximation of L2 Norm):\")\nprint(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)=",
         "detail": "HW.HW05_301",
         "documentation": {}
     },
@@ -1171,7 +1171,7 @@
         "kind": 5,
         "importPath": "HW.HW05_301",
         "description": "HW.HW05_301",
-        "peekOfCode": "print(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)",
+        "peekOfCode": "print(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)=",
         "detail": "HW.HW05_301",
         "documentation": {}
     }

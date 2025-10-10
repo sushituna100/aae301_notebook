@@ -185,4 +185,4 @@ print("e) Norm Computations (Approximation of L2 Norm):")
 print(f"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}")
 print(f"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}")
 print(f"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}")
-print("="*50)
+print("="*50)=
