@@ -43,11 +43,45 @@
         "documentation": {}
     },
     {
+        "label": "*",
+        "importPath": "sympy",
+        "description": "sympy",
+        "isExtraImport": true,
+        "detail": "sympy",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "sympy",
+        "description": "sympy",
+        "isExtraImport": true,
+        "detail": "sympy",
+        "documentation": {}
+    },
+    {
         "label": "tqdm",
         "importPath": "tqdm",
         "description": "tqdm",
         "isExtraImport": true,
         "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
         "documentation": {}
     },
     {
@@ -1144,7 +1178,7 @@
         "kind": 5,
         "importPath": "HW.HW05_301",
         "description": "HW.HW05_301",
-        "peekOfCode": "norm_error_S = np.sqrt(dt * np.sum(np.abs(error_S)**2))\n#Calculate the error and norm of the function with K\nerror_K = f_sampled - p_K_t\nnorm_error_K = np.sqrt(dt * np.sum(np.abs(error_K)**2))\nprint(\"\\n\" + \"=\"*50)\nprint(\"e) Norm Computations (Approximation of L2 Norm):\")\nprint(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)=",
+        "peekOfCode": "norm_error_S = np.sqrt(dt * np.sum(np.abs(error_S)**2))\n#Calculate the error and norm of the function with K\nerror_K = f_sampled - p_K_t\nnorm_error_K = np.sqrt(dt * np.sum(np.abs(error_K)**2))\nprint(\"\\n\" + \"=\"*50)\nprint(\"e) Norm Computations (Approximation of L2 Norm):\")\nprint(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)=f",
         "detail": "HW.HW05_301",
         "documentation": {}
     },
@@ -1153,7 +1187,7 @@
         "kind": 5,
         "importPath": "HW.HW05_301",
         "description": "HW.HW05_301",
-        "peekOfCode": "error_K = f_sampled - p_K_t\nnorm_error_K = np.sqrt(dt * np.sum(np.abs(error_K)**2))\nprint(\"\\n\" + \"=\"*50)\nprint(\"e) Norm Computations (Approximation of L2 Norm):\")\nprint(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)=",
+        "peekOfCode": "error_K = f_sampled - p_K_t\nnorm_error_K = np.sqrt(dt * np.sum(np.abs(error_K)**2))\nprint(\"\\n\" + \"=\"*50)\nprint(\"e) Norm Computations (Approximation of L2 Norm):\")\nprint(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)=f",
         "detail": "HW.HW05_301",
         "documentation": {}
     },
@@ -1162,7 +1196,7 @@
         "kind": 5,
         "importPath": "HW.HW05_301",
         "description": "HW.HW05_301",
-        "peekOfCode": "norm_error_K = np.sqrt(dt * np.sum(np.abs(error_K)**2))\nprint(\"\\n\" + \"=\"*50)\nprint(\"e) Norm Computations (Approximation of L2 Norm):\")\nprint(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)=",
+        "peekOfCode": "norm_error_K = np.sqrt(dt * np.sum(np.abs(error_K)**2))\nprint(\"\\n\" + \"=\"*50)\nprint(\"e) Norm Computations (Approximation of L2 Norm):\")\nprint(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)=f",
         "detail": "HW.HW05_301",
         "documentation": {}
     },
@@ -1171,8 +1205,566 @@
         "kind": 5,
         "importPath": "HW.HW05_301",
         "description": "HW.HW05_301",
-        "peekOfCode": "print(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)=",
+        "peekOfCode": "print(f\"||f|| = sqrt((2*pi/N) * sum(|f_j|^2)) ≈ {norm_f:.6f}\")\nprint(f\"||f - p_S|| (12 coeffs) ≈ {norm_error_S:.6f}\")\nprint(f\"||f - p_K|| (28 coeffs) ≈ {norm_error_K:.6f}\")\nprint(\"=\"*50)=f",
         "detail": "HW.HW05_301",
+        "documentation": {}
+    },
+    {
+        "label": "h",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "h = symbols('h') # The variable to solve for\nP = 750\nq_lb_ft = 110\nL1_ft = 3\nL2_ft = 8\nL3_ft = 5\nb = 2.5\nt = 3/8\nsigma_t_allow = 18000 # psi\nsigma_c_allow = 12000 # psi",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "P",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "P = 750\nq_lb_ft = 110\nL1_ft = 3\nL2_ft = 8\nL3_ft = 5\nb = 2.5\nt = 3/8\nsigma_t_allow = 18000 # psi\nsigma_c_allow = 12000 # psi\n# Maximum moment (from right overhang)",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "q_lb_ft",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "q_lb_ft = 110\nL1_ft = 3\nL2_ft = 8\nL3_ft = 5\nb = 2.5\nt = 3/8\nsigma_t_allow = 18000 # psi\nsigma_c_allow = 12000 # psi\n# Maximum moment (from right overhang)\nM_max = Abs(- (q_lb_ft * L3_ft) * (L3_ft / 2) * 12) ",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "L1_ft",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "L1_ft = 3\nL2_ft = 8\nL3_ft = 5\nb = 2.5\nt = 3/8\nsigma_t_allow = 18000 # psi\nsigma_c_allow = 12000 # psi\n# Maximum moment (from right overhang)\nM_max = Abs(- (q_lb_ft * L3_ft) * (L3_ft / 2) * 12) \n#Geometric properties",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "L2_ft",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "L2_ft = 8\nL3_ft = 5\nb = 2.5\nt = 3/8\nsigma_t_allow = 18000 # psi\nsigma_c_allow = 12000 # psi\n# Maximum moment (from right overhang)\nM_max = Abs(- (q_lb_ft * L3_ft) * (L3_ft / 2) * 12) \n#Geometric properties\nA_flange = b * t",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "L3_ft",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "L3_ft = 5\nb = 2.5\nt = 3/8\nsigma_t_allow = 18000 # psi\nsigma_c_allow = 12000 # psi\n# Maximum moment (from right overhang)\nM_max = Abs(- (q_lb_ft * L3_ft) * (L3_ft / 2) * 12) \n#Geometric properties\nA_flange = b * t\nA_web = t * h",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "b",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "b = 2.5\nt = 3/8\nsigma_t_allow = 18000 # psi\nsigma_c_allow = 12000 # psi\n# Maximum moment (from right overhang)\nM_max = Abs(- (q_lb_ft * L3_ft) * (L3_ft / 2) * 12) \n#Geometric properties\nA_flange = b * t\nA_web = t * h\nA_total = A_flange + A_web",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "t",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "t = 3/8\nsigma_t_allow = 18000 # psi\nsigma_c_allow = 12000 # psi\n# Maximum moment (from right overhang)\nM_max = Abs(- (q_lb_ft * L3_ft) * (L3_ft / 2) * 12) \n#Geometric properties\nA_flange = b * t\nA_web = t * h\nA_total = A_flange + A_web\n# Centroid (y_bar) from the BOTTOM",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "sigma_t_allow",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "sigma_t_allow = 18000 # psi\nsigma_c_allow = 12000 # psi\n# Maximum moment (from right overhang)\nM_max = Abs(- (q_lb_ft * L3_ft) * (L3_ft / 2) * 12) \n#Geometric properties\nA_flange = b * t\nA_web = t * h\nA_total = A_flange + A_web\n# Centroid (y_bar) from the BOTTOM\ny_bar = (A_flange * (t/2) + A_web * (t + h/2)) / A_total",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "sigma_c_allow",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "sigma_c_allow = 12000 # psi\n# Maximum moment (from right overhang)\nM_max = Abs(- (q_lb_ft * L3_ft) * (L3_ft / 2) * 12) \n#Geometric properties\nA_flange = b * t\nA_web = t * h\nA_total = A_flange + A_web\n# Centroid (y_bar) from the BOTTOM\ny_bar = (A_flange * (t/2) + A_web * (t + h/2)) / A_total\n# Moment of Inertia (I)",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "M_max",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "M_max = Abs(- (q_lb_ft * L3_ft) * (L3_ft / 2) * 12) \n#Geometric properties\nA_flange = b * t\nA_web = t * h\nA_total = A_flange + A_web\n# Centroid (y_bar) from the BOTTOM\ny_bar = (A_flange * (t/2) + A_web * (t + h/2)) / A_total\n# Moment of Inertia (I)\nI_flange = (b * t**3) / 12 + A_flange * (y_bar - t/2)**2\nI_web = (t * h**3) / 12 + A_web * ((t + h/2) - y_bar)**2",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "A_flange",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "A_flange = b * t\nA_web = t * h\nA_total = A_flange + A_web\n# Centroid (y_bar) from the BOTTOM\ny_bar = (A_flange * (t/2) + A_web * (t + h/2)) / A_total\n# Moment of Inertia (I)\nI_flange = (b * t**3) / 12 + A_flange * (y_bar - t/2)**2\nI_web = (t * h**3) / 12 + A_web * ((t + h/2) - y_bar)**2\nI = I_flange + I_web\n# Distances to Extreme Fibers (Flange at bottom, Web at top)",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "A_web",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "A_web = t * h\nA_total = A_flange + A_web\n# Centroid (y_bar) from the BOTTOM\ny_bar = (A_flange * (t/2) + A_web * (t + h/2)) / A_total\n# Moment of Inertia (I)\nI_flange = (b * t**3) / 12 + A_flange * (y_bar - t/2)**2\nI_web = (t * h**3) / 12 + A_web * ((t + h/2) - y_bar)**2\nI = I_flange + I_web\n# Distances to Extreme Fibers (Flange at bottom, Web at top)\nc_tension = y_bar        # Bottom fiber (Tension from M_max hogging)",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "A_total",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "A_total = A_flange + A_web\n# Centroid (y_bar) from the BOTTOM\ny_bar = (A_flange * (t/2) + A_web * (t + h/2)) / A_total\n# Moment of Inertia (I)\nI_flange = (b * t**3) / 12 + A_flange * (y_bar - t/2)**2\nI_web = (t * h**3) / 12 + A_web * ((t + h/2) - y_bar)**2\nI = I_flange + I_web\n# Distances to Extreme Fibers (Flange at bottom, Web at top)\nc_tension = y_bar        # Bottom fiber (Tension from M_max hogging)\nc_compression = (t + h) - y_bar  # Top fiber (Compression from M_max hogging)",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "y_bar",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "y_bar = (A_flange * (t/2) + A_web * (t + h/2)) / A_total\n# Moment of Inertia (I)\nI_flange = (b * t**3) / 12 + A_flange * (y_bar - t/2)**2\nI_web = (t * h**3) / 12 + A_web * ((t + h/2) - y_bar)**2\nI = I_flange + I_web\n# Distances to Extreme Fibers (Flange at bottom, Web at top)\nc_tension = y_bar        # Bottom fiber (Tension from M_max hogging)\nc_compression = (t + h) - y_bar  # Top fiber (Compression from M_max hogging)\n# --- 3. Design Constraint Equations (f(h) = 0) ---\n# The design is governed by the maximum stress being equal to the allowable stress.",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "I_flange",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "I_flange = (b * t**3) / 12 + A_flange * (y_bar - t/2)**2\nI_web = (t * h**3) / 12 + A_web * ((t + h/2) - y_bar)**2\nI = I_flange + I_web\n# Distances to Extreme Fibers (Flange at bottom, Web at top)\nc_tension = y_bar        # Bottom fiber (Tension from M_max hogging)\nc_compression = (t + h) - y_bar  # Top fiber (Compression from M_max hogging)\n# --- 3. Design Constraint Equations (f(h) = 0) ---\n# The design is governed by the maximum stress being equal to the allowable stress.\ntension_constraint = (M_max * c_tension / I) - sigma_t_allow\ncompression_constraint = (M_max * c_compression / I) - sigma_c_allow",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "I_web",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "I_web = (t * h**3) / 12 + A_web * ((t + h/2) - y_bar)**2\nI = I_flange + I_web\n# Distances to Extreme Fibers (Flange at bottom, Web at top)\nc_tension = y_bar        # Bottom fiber (Tension from M_max hogging)\nc_compression = (t + h) - y_bar  # Top fiber (Compression from M_max hogging)\n# --- 3. Design Constraint Equations (f(h) = 0) ---\n# The design is governed by the maximum stress being equal to the allowable stress.\ntension_constraint = (M_max * c_tension / I) - sigma_t_allow\ncompression_constraint = (M_max * c_compression / I) - sigma_c_allow\n# --- 4. Numerical Solution for h ---",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "I",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "I = I_flange + I_web\n# Distances to Extreme Fibers (Flange at bottom, Web at top)\nc_tension = y_bar        # Bottom fiber (Tension from M_max hogging)\nc_compression = (t + h) - y_bar  # Top fiber (Compression from M_max hogging)\n# --- 3. Design Constraint Equations (f(h) = 0) ---\n# The design is governed by the maximum stress being equal to the allowable stress.\ntension_constraint = (M_max * c_tension / I) - sigma_t_allow\ncompression_constraint = (M_max * c_compression / I) - sigma_c_allow\n# --- 4. Numerical Solution for h ---\nh_guess = 5.0",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "c_tension",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "c_tension = y_bar        # Bottom fiber (Tension from M_max hogging)\nc_compression = (t + h) - y_bar  # Top fiber (Compression from M_max hogging)\n# --- 3. Design Constraint Equations (f(h) = 0) ---\n# The design is governed by the maximum stress being equal to the allowable stress.\ntension_constraint = (M_max * c_tension / I) - sigma_t_allow\ncompression_constraint = (M_max * c_compression / I) - sigma_c_allow\n# --- 4. Numerical Solution for h ---\nh_guess = 5.0\n# Solve for h for each constraint\nh_tension = nsolve(tension_constraint, h, h_guess, verify=False)",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "c_compression",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "c_compression = (t + h) - y_bar  # Top fiber (Compression from M_max hogging)\n# --- 3. Design Constraint Equations (f(h) = 0) ---\n# The design is governed by the maximum stress being equal to the allowable stress.\ntension_constraint = (M_max * c_tension / I) - sigma_t_allow\ncompression_constraint = (M_max * c_compression / I) - sigma_c_allow\n# --- 4. Numerical Solution for h ---\nh_guess = 5.0\n# Solve for h for each constraint\nh_tension = nsolve(tension_constraint, h, h_guess, verify=False)\nh_compression = nsolve(compression_constraint, h, h_guess, verify=False)",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "tension_constraint",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "tension_constraint = (M_max * c_tension / I) - sigma_t_allow\ncompression_constraint = (M_max * c_compression / I) - sigma_c_allow\n# --- 4. Numerical Solution for h ---\nh_guess = 5.0\n# Solve for h for each constraint\nh_tension = nsolve(tension_constraint, h, h_guess, verify=False)\nh_compression = nsolve(compression_constraint, h, h_guess, verify=False)\n# The required h is the larger (governing) value\nh_required = np.max([float(h_tension), float(h_compression)])\n# --- 5. Output Results ---",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "compression_constraint",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "compression_constraint = (M_max * c_compression / I) - sigma_c_allow\n# --- 4. Numerical Solution for h ---\nh_guess = 5.0\n# Solve for h for each constraint\nh_tension = nsolve(tension_constraint, h, h_guess, verify=False)\nh_compression = nsolve(compression_constraint, h, h_guess, verify=False)\n# The required h is the larger (governing) value\nh_required = np.max([float(h_tension), float(h_compression)])\n# --- 5. Output Results ---\nprint(f\"--- Required Depth (h) Calculation (Part D) ---\")",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "h_guess",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "h_guess = 5.0\n# Solve for h for each constraint\nh_tension = nsolve(tension_constraint, h, h_guess, verify=False)\nh_compression = nsolve(compression_constraint, h, h_guess, verify=False)\n# The required h is the larger (governing) value\nh_required = np.max([float(h_tension), float(h_compression)])\n# --- 5. Output Results ---\nprint(f\"--- Required Depth (h) Calculation (Part D) ---\")\nprint(f\"Maximum Bending Moment: {M_max:.2f} lb-in\")\nprint(f\"Allowable Tension Stress: {sigma_t_allow/1000:.0f} ksi\")",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "h_tension",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "h_tension = nsolve(tension_constraint, h, h_guess, verify=False)\nh_compression = nsolve(compression_constraint, h, h_guess, verify=False)\n# The required h is the larger (governing) value\nh_required = np.max([float(h_tension), float(h_compression)])\n# --- 5. Output Results ---\nprint(f\"--- Required Depth (h) Calculation (Part D) ---\")\nprint(f\"Maximum Bending Moment: {M_max:.2f} lb-in\")\nprint(f\"Allowable Tension Stress: {sigma_t_allow/1000:.0f} ksi\")\nprint(f\"Allowable Compression Stress: {sigma_c_allow/1000:.0f} ksi\")\nprint(\"-\" * 45)",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "h_compression",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "h_compression = nsolve(compression_constraint, h, h_guess, verify=False)\n# The required h is the larger (governing) value\nh_required = np.max([float(h_tension), float(h_compression)])\n# --- 5. Output Results ---\nprint(f\"--- Required Depth (h) Calculation (Part D) ---\")\nprint(f\"Maximum Bending Moment: {M_max:.2f} lb-in\")\nprint(f\"Allowable Tension Stress: {sigma_t_allow/1000:.0f} ksi\")\nprint(f\"Allowable Compression Stress: {sigma_c_allow/1000:.0f} ksi\")\nprint(\"-\" * 45)\nprint(f\"h required by Tension constraint: {float(h_tension):.4f} in\")",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "h_required",
+        "kind": 5,
+        "importPath": "HW.HW08_204",
+        "description": "HW.HW08_204",
+        "peekOfCode": "h_required = np.max([float(h_tension), float(h_compression)])\n# --- 5. Output Results ---\nprint(f\"--- Required Depth (h) Calculation (Part D) ---\")\nprint(f\"Maximum Bending Moment: {M_max:.2f} lb-in\")\nprint(f\"Allowable Tension Stress: {sigma_t_allow/1000:.0f} ksi\")\nprint(f\"Allowable Compression Stress: {sigma_c_allow/1000:.0f} ksi\")\nprint(\"-\" * 45)\nprint(f\"h required by Tension constraint: {float(h_tension):.4f} in\")\nprint(f\"h required by Compression constraint: {float(h_compression):.4f} in\")\nprint(\"-\" * 45)",
+        "detail": "HW.HW08_204",
+        "documentation": {}
+    },
+    {
+        "label": "A",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "A = sp.Matrix([\n    [-3, -6, -10, 10],\n    [1, -1, 0, 0],\n    [0, 1, -2, 3],\n    [0, 0, 1, -2]\n    ])\nB = sp.Matrix([[1], [0], [0], [0]])\nC = sp.Matrix([[1, -4, -2, 10]])\nD = sp.Matrix([[0]])\ns = sp.symbols('s')",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "B",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "B = sp.Matrix([[1], [0], [0], [0]])\nC = sp.Matrix([[1, -4, -2, 10]])\nD = sp.Matrix([[0]])\ns = sp.symbols('s')\nI = sp.eye(4)\nG_s = sp.simplify(C * (s*I - A).inv() * B + D)\nG_s = sp.simplify(G_s[0])\nnum, den = sp.fraction(sp.simplify(G_s))\nprint(\"Part 1\")\nprint('G(s) = ', G_s)",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "C",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "C = sp.Matrix([[1, -4, -2, 10]])\nD = sp.Matrix([[0]])\ns = sp.symbols('s')\nI = sp.eye(4)\nG_s = sp.simplify(C * (s*I - A).inv() * B + D)\nG_s = sp.simplify(G_s[0])\nnum, den = sp.fraction(sp.simplify(G_s))\nprint(\"Part 1\")\nprint('G(s) = ', G_s)\nprint('Numerator =', sp.factor(num))",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "D",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "D = sp.Matrix([[0]])\ns = sp.symbols('s')\nI = sp.eye(4)\nG_s = sp.simplify(C * (s*I - A).inv() * B + D)\nG_s = sp.simplify(G_s[0])\nnum, den = sp.fraction(sp.simplify(G_s))\nprint(\"Part 1\")\nprint('G(s) = ', G_s)\nprint('Numerator =', sp.factor(num))\nprint(\"Denominator =\", sp.factor(den))",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "s",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "s = sp.symbols('s')\nI = sp.eye(4)\nG_s = sp.simplify(C * (s*I - A).inv() * B + D)\nG_s = sp.simplify(G_s[0])\nnum, den = sp.fraction(sp.simplify(G_s))\nprint(\"Part 1\")\nprint('G(s) = ', G_s)\nprint('Numerator =', sp.factor(num))\nprint(\"Denominator =\", sp.factor(den))\ng = sp.gcd(num, den)",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "I",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "I = sp.eye(4)\nG_s = sp.simplify(C * (s*I - A).inv() * B + D)\nG_s = sp.simplify(G_s[0])\nnum, den = sp.fraction(sp.simplify(G_s))\nprint(\"Part 1\")\nprint('G(s) = ', G_s)\nprint('Numerator =', sp.factor(num))\nprint(\"Denominator =\", sp.factor(den))\ng = sp.gcd(num, den)\nnum_r = sp.simplify(num/g)",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "G_s",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "G_s = sp.simplify(C * (s*I - A).inv() * B + D)\nG_s = sp.simplify(G_s[0])\nnum, den = sp.fraction(sp.simplify(G_s))\nprint(\"Part 1\")\nprint('G(s) = ', G_s)\nprint('Numerator =', sp.factor(num))\nprint(\"Denominator =\", sp.factor(den))\ng = sp.gcd(num, den)\nnum_r = sp.simplify(num/g)\nden_r = sp.simplify(den/g)",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "G_s",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "G_s = sp.simplify(G_s[0])\nnum, den = sp.fraction(sp.simplify(G_s))\nprint(\"Part 1\")\nprint('G(s) = ', G_s)\nprint('Numerator =', sp.factor(num))\nprint(\"Denominator =\", sp.factor(den))\ng = sp.gcd(num, den)\nnum_r = sp.simplify(num/g)\nden_r = sp.simplify(den/g)\nmcmillan_deg = sp.degree(den_r, s)",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "print('G(s)",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "print('G(s) = ', G_s)\nprint('Numerator =', sp.factor(num))\nprint(\"Denominator =\", sp.factor(den))\ng = sp.gcd(num, den)\nnum_r = sp.simplify(num/g)\nden_r = sp.simplify(den/g)\nmcmillan_deg = sp.degree(den_r, s)\nprint(\"GCD(num, den) = \", g)\nprint('McMillan degree = ', mcmillan_deg)\n#Part 2 ",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "g",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "g = sp.gcd(num, den)\nnum_r = sp.simplify(num/g)\nden_r = sp.simplify(den/g)\nmcmillan_deg = sp.degree(den_r, s)\nprint(\"GCD(num, den) = \", g)\nprint('McMillan degree = ', mcmillan_deg)\n#Part 2 \nn = 4\ncont = B\nfor i in range(1, n):",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "num_r",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "num_r = sp.simplify(num/g)\nden_r = sp.simplify(den/g)\nmcmillan_deg = sp.degree(den_r, s)\nprint(\"GCD(num, den) = \", g)\nprint('McMillan degree = ', mcmillan_deg)\n#Part 2 \nn = 4\ncont = B\nfor i in range(1, n):\n    cont = cont.row_join(A**i * B)",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "den_r",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "den_r = sp.simplify(den/g)\nmcmillan_deg = sp.degree(den_r, s)\nprint(\"GCD(num, den) = \", g)\nprint('McMillan degree = ', mcmillan_deg)\n#Part 2 \nn = 4\ncont = B\nfor i in range(1, n):\n    cont = cont.row_join(A**i * B)\nobs = C",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "mcmillan_deg",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "mcmillan_deg = sp.degree(den_r, s)\nprint(\"GCD(num, den) = \", g)\nprint('McMillan degree = ', mcmillan_deg)\n#Part 2 \nn = 4\ncont = B\nfor i in range(1, n):\n    cont = cont.row_join(A**i * B)\nobs = C\nfor i in range(1, n):",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "n",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "n = 4\ncont = B\nfor i in range(1, n):\n    cont = cont.row_join(A**i * B)\nobs = C\nfor i in range(1, n):\n    obs = obs.col_join(C * A**i)\nrank_cont = cont.rank()\nrank_obs = obs.rank()\nprint(\"\\nPart 2\")",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "cont",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "cont = B\nfor i in range(1, n):\n    cont = cont.row_join(A**i * B)\nobs = C\nfor i in range(1, n):\n    obs = obs.col_join(C * A**i)\nrank_cont = cont.rank()\nrank_obs = obs.rank()\nprint(\"\\nPart 2\")\nprint('Controllability rank = ', rank_cont)",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "obs",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "obs = C\nfor i in range(1, n):\n    obs = obs.col_join(C * A**i)\nrank_cont = cont.rank()\nrank_obs = obs.rank()\nprint(\"\\nPart 2\")\nprint('Controllability rank = ', rank_cont)\nprint('Observability rank = ', rank_obs)\nif rank_cont == n and rank_obs == n:\n    print(\"System is minimal\")",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "rank_cont",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "rank_cont = cont.rank()\nrank_obs = obs.rank()\nprint(\"\\nPart 2\")\nprint('Controllability rank = ', rank_cont)\nprint('Observability rank = ', rank_obs)\nif rank_cont == n and rank_obs == n:\n    print(\"System is minimal\")\nelse:\n    print(\"System is not minimal\")\nA_min, B_min, C_min, D_min = A, B, C, D",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "rank_obs",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "rank_obs = obs.rank()\nprint(\"\\nPart 2\")\nprint('Controllability rank = ', rank_cont)\nprint('Observability rank = ', rank_obs)\nif rank_cont == n and rank_obs == n:\n    print(\"System is minimal\")\nelse:\n    print(\"System is not minimal\")\nA_min, B_min, C_min, D_min = A, B, C, D\n# Part 3",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "u0",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "u0 = 30\nG0 = sp.simplify(G_s.subs(s, 0))\ny_inf = u0  * G0\nprint(\"\\nPart 3\")\nprint('G(0) = ', G0)\nprint('y_infinity = ', float(y_inf))\nA_np = np.array(A, dtype = float)\nB_np = np.array(B, dtype = float)\nC_np = np.array(C, dtype = float)\nD_np = np.array(D, dtype = float)",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "G0",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "G0 = sp.simplify(G_s.subs(s, 0))\ny_inf = u0  * G0\nprint(\"\\nPart 3\")\nprint('G(0) = ', G0)\nprint('y_infinity = ', float(y_inf))\nA_np = np.array(A, dtype = float)\nB_np = np.array(B, dtype = float)\nC_np = np.array(C, dtype = float)\nD_np = np.array(D, dtype = float)\nt_end = 10",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "y_inf",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "y_inf = u0  * G0\nprint(\"\\nPart 3\")\nprint('G(0) = ', G0)\nprint('y_infinity = ', float(y_inf))\nA_np = np.array(A, dtype = float)\nB_np = np.array(B, dtype = float)\nC_np = np.array(C, dtype = float)\nD_np = np.array(D, dtype = float)\nt_end = 10\nN = 2001",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "print('G(0)",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "print('G(0) = ', G0)\nprint('y_infinity = ', float(y_inf))\nA_np = np.array(A, dtype = float)\nB_np = np.array(B, dtype = float)\nC_np = np.array(C, dtype = float)\nD_np = np.array(D, dtype = float)\nt_end = 10\nN = 2001\nt_vals = np.linspace(0, t_end, N)\ndt = t_vals[1] - t_vals[0]",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "print('y_infinity",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "print('y_infinity = ', float(y_inf))\nA_np = np.array(A, dtype = float)\nB_np = np.array(B, dtype = float)\nC_np = np.array(C, dtype = float)\nD_np = np.array(D, dtype = float)\nt_end = 10\nN = 2001\nt_vals = np.linspace(0, t_end, N)\ndt = t_vals[1] - t_vals[0]\nx = np.zeros((4, 1))",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "A_np",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "A_np = np.array(A, dtype = float)\nB_np = np.array(B, dtype = float)\nC_np = np.array(C, dtype = float)\nD_np = np.array(D, dtype = float)\nt_end = 10\nN = 2001\nt_vals = np.linspace(0, t_end, N)\ndt = t_vals[1] - t_vals[0]\nx = np.zeros((4, 1))\ny_vals = np.zeros(N)",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "B_np",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "B_np = np.array(B, dtype = float)\nC_np = np.array(C, dtype = float)\nD_np = np.array(D, dtype = float)\nt_end = 10\nN = 2001\nt_vals = np.linspace(0, t_end, N)\ndt = t_vals[1] - t_vals[0]\nx = np.zeros((4, 1))\ny_vals = np.zeros(N)\nfor i, t in enumerate(t_vals):",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "C_np",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "C_np = np.array(C, dtype = float)\nD_np = np.array(D, dtype = float)\nt_end = 10\nN = 2001\nt_vals = np.linspace(0, t_end, N)\ndt = t_vals[1] - t_vals[0]\nx = np.zeros((4, 1))\ny_vals = np.zeros(N)\nfor i, t in enumerate(t_vals):\n    y_vals[i] = float(C_np @ x + D_np * u0)",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "D_np",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "D_np = np.array(D, dtype = float)\nt_end = 10\nN = 2001\nt_vals = np.linspace(0, t_end, N)\ndt = t_vals[1] - t_vals[0]\nx = np.zeros((4, 1))\ny_vals = np.zeros(N)\nfor i, t in enumerate(t_vals):\n    y_vals[i] = float(C_np @ x + D_np * u0)\n    xdot = A_np @ x + B_np * u0",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "t_end",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "t_end = 10\nN = 2001\nt_vals = np.linspace(0, t_end, N)\ndt = t_vals[1] - t_vals[0]\nx = np.zeros((4, 1))\ny_vals = np.zeros(N)\nfor i, t in enumerate(t_vals):\n    y_vals[i] = float(C_np @ x + D_np * u0)\n    xdot = A_np @ x + B_np * u0\n    x = x + xdot * dt",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "N",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "N = 2001\nt_vals = np.linspace(0, t_end, N)\ndt = t_vals[1] - t_vals[0]\nx = np.zeros((4, 1))\ny_vals = np.zeros(N)\nfor i, t in enumerate(t_vals):\n    y_vals[i] = float(C_np @ x + D_np * u0)\n    xdot = A_np @ x + B_np * u0\n    x = x + xdot * dt\nplt.figure(figsize=(10, 10))",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "t_vals",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "t_vals = np.linspace(0, t_end, N)\ndt = t_vals[1] - t_vals[0]\nx = np.zeros((4, 1))\ny_vals = np.zeros(N)\nfor i, t in enumerate(t_vals):\n    y_vals[i] = float(C_np @ x + D_np * u0)\n    xdot = A_np @ x + B_np * u0\n    x = x + xdot * dt\nplt.figure(figsize=(10, 10))\nplt.plot(t_vals, y_vals, label = 'y(t)')",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "dt",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "dt = t_vals[1] - t_vals[0]\nx = np.zeros((4, 1))\ny_vals = np.zeros(N)\nfor i, t in enumerate(t_vals):\n    y_vals[i] = float(C_np @ x + D_np * u0)\n    xdot = A_np @ x + B_np * u0\n    x = x + xdot * dt\nplt.figure(figsize=(10, 10))\nplt.plot(t_vals, y_vals, label = 'y(t)')\nplt.xlabel('t')",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "x = np.zeros((4, 1))\ny_vals = np.zeros(N)\nfor i, t in enumerate(t_vals):\n    y_vals[i] = float(C_np @ x + D_np * u0)\n    xdot = A_np @ x + B_np * u0\n    x = x + xdot * dt\nplt.figure(figsize=(10, 10))\nplt.plot(t_vals, y_vals, label = 'y(t)')\nplt.xlabel('t')\nplt.ylabel('y(t)')",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "y_vals",
+        "kind": 5,
+        "importPath": "HW.HW10_301",
+        "description": "HW.HW10_301",
+        "peekOfCode": "y_vals = np.zeros(N)\nfor i, t in enumerate(t_vals):\n    y_vals[i] = float(C_np @ x + D_np * u0)\n    xdot = A_np @ x + B_np * u0\n    x = x + xdot * dt\nplt.figure(figsize=(10, 10))\nplt.plot(t_vals, y_vals, label = 'y(t)')\nplt.xlabel('t')\nplt.ylabel('y(t)')\nplt.axhline(float(y_inf), color = 'r', label = 'y_infinity')",
+        "detail": "HW.HW10_301",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "HW.ISA3_251",
+        "description": "HW.ISA3_251",
+        "peekOfCode": "data = {\n    'Aircraft': [\n        'Boeing 777-8', 'Airbus A350-900 ULR', 'Boeing 787-9', \n        'Airbus A350-1000', 'Boeing 747-8', 'Airbus A380', \n        'Boeing 787-10'\n    ],\n    'Range_nmi': [8745, 9700, 7565, 9000, 7370, 8000, 6330],\n    'Aspect_Ratio': [10.0, 9.5, 10.4, 9.5, 8.5, 7.5, 10.4]\n}\ndf = pd.DataFrame(data)",
+        "detail": "HW.ISA3_251",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "HW.ISA3_251",
+        "description": "HW.ISA3_251",
+        "peekOfCode": "df = pd.DataFrame(data)\n# 2. Plotting Setup\nplt.figure(figsize=(10, 6))\n# Create the scatter plot\nplt.scatter(\n    df['Range_nmi'], \n    df['Aspect_Ratio'], \n    color='darkblue', \n    marker='o', \n    s=100",
+        "detail": "HW.ISA3_251",
+        "documentation": {}
+    },
+    {
+        "label": "calc_diagonal_dist",
+        "kind": 2,
+        "importPath": "HW.Project2_204",
+        "description": "HW.Project2_204",
+        "peekOfCode": "def calc_diagonal_dist(x, y):\n    '''\n    Calculate the diagonal distance between two points (x, y)\n    Parameters\n    ----------\n    x : float\n        The x-coordinate of the point\n    y : float\n        The y-coordinate of the point\n    Returns",
+        "detail": "HW.Project2_204",
         "documentation": {}
     }
 ]
